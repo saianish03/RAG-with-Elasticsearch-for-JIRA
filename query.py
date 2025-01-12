@@ -13,7 +13,7 @@ Settings.embed_model = OllamaEmbedding("stablelm2")
 index = VectorStoreIndex.from_vector_store(elastic_vector_store)
 query_engine = index.as_query_engine(llm, similarity_top_k=10)
 
-query="Give me information about Issue Key SRCTREEWIN-14221"
+query="Give me everything about key BUILDR-236"
 
 bundle = QueryBundle(query, embedding=Settings.embed_model.get_query_embedding(query))
 result = query_engine.query(bundle)
